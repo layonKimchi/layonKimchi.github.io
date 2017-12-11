@@ -28,6 +28,34 @@ body {
     border-width: 1px;
 }
 
+#apparelPic{
+    width: 20%;
+}
+
+#buyMenu{
+    text-align:center;
+    width: 20%;
+    display: inline-block;
+    line-height:1px;
+}
+
+.buyButton{
+    background-color:white;
+    
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    text-align:center;
+}
+
+.buyButton:hover{
+    transform:translateY(1px);
+}
+
+.prevText{
+    font-size:0.75em;
+}
+
 a {
     font-weight: bold;
 }

@@ -6,18 +6,61 @@
 	
 	
 	<body>
+		<script>
+			function purchase(){
+				var button = document.getElementsByClassName("buyButton");
+				button.style.opacity = "0";
+			}
+			
+		</script>
 		<div id = "nav">
 			<p style = "font-size: 1.5em">Krischin Layon</p>
 			<a href="https://www.christianlayone.com/" class = "nav">Actual Website</a>
 		</div>
 		
-		<h1 id="top">PAGE 2</h1>
-		<img src = "img/cdg.png" style="width: 17em; line-height: 20px">
+		<h1 id="top">APPAREL</h1>
+		
+		<img src="img/piece1.jpg" id = "apparelPic">
+		<img src="img/piece2.jpg" id = "apparelPic">
+		<img src="img/piece3.jpg" id = "apparelPic">
+		
+		<br>
+		
+		<div id="buyMenu">
+			<div class="prevText">
+				<p>"WINDBREAKER"</p>
+				<p>$20,000</p>
+				<p>In Stock</p>
+			</div>
+			<br>
+			<button onclick="purchase()" class = "buyButton">PURCHASE</button>
+		</div>
+		
+		<div id="buyMenu">
+			<div class="prevText">
+				<p>"SHAWL"</p>
+				<p>$20,000</p>
+				<p>In Stock</p>
+			</div>
+			<br>
+			<button onclick="purchase()" class = "buyButton">PURCHASE</button>
+		</div>
+		
+		<div id="buyMenu">
+			<div class="prevText">
+				<p>"COAT"</p>
+				<p>$20,000</p>
+				<p>In Stock</p>
+			</div>
+			<br>
+			<button onclick="purchase()" class = "buyButton">PURCHASE</button>
+		</div>
+		
 		
 		<div id = "links">
-			<a href="index.html">Go to the homepage.</a>
+			<a href="index.html">Home</a>
 			</br>
-			<a href="page3.html">Go to Page3</a>
+			<a href="page3.html"></a>
 			<br>
 			<a href="coursework.html">Coursework</a>
 		</div>
