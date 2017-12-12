@@ -6,13 +6,7 @@
 	
 	
 	<body>
-		<script>
-			function purchase(){
-				var button = document.getElementsByClassName("buyButton");
-				button.style.opacity = "0";
-			}
-			
-		</script>
+		
 		<div id = "nav">
 			<p style = "font-size: 1.5em">Krischin Layon</p>
 			<a href="https://www.christianlayone.com/" class = "nav">Actual Website</a>
@@ -33,7 +27,7 @@
 				<p>In Stock</p>
 			</div>
 			<br>
-			<button onclick="purchase()" class = "buyButton">PURCHASE</button>
+			<button class = "buyButton">PURCHASE</button>
 		</div>
 		
 		<div id="buyMenu">
@@ -43,7 +37,7 @@
 				<p>In Stock</p>
 			</div>
 			<br>
-			<button onclick="purchase()" class = "buyButton">PURCHASE</button>
+			<button class = "buyButton">PURCHASE</button>
 		</div>
 		
 		<div id="buyMenu">
@@ -53,7 +47,7 @@
 				<p>In Stock</p>
 			</div>
 			<br>
-			<button onclick="purchase()" class = "buyButton">PURCHASE</button>
+			<button class = "buyButton">PURCHASE</button>
 		</div>
 		
 		
@@ -64,5 +58,15 @@
 			<br>
 			<a href="coursework.html">Coursework</a>
 		</div>
+		
+		<script>
+			var buttons = document.getElementsByClassName("buyButton");
+			for(var i=0; i<buttons.length; i++) {
+        		buttons[i].onclick = function(){
+        			this.innerHTML = "IN CART"
+        			this.style.color = "red";
+        		}
+    		}
+		</script>
 	</body>
 </html>
