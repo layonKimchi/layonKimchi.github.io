@@ -1,26 +1,37 @@
 <html>
 	<head>
-		<title>Sup Mah Namericans</title>
+		<title>CDG X ACRONYM</title>
 		<link rel="stylesheet" href="styles/style.css">
+		<link rel="shortcut icon" href="favicon.ico">
 	</head>
 	
 	
-	<body>
+	<body id="body">
 		<div id = "nav">
 			<p style = "font-size: 1.5em">Krischin Layon</p>
 			<a href="https://www.christianlayone.com/" class = "nav">Actual Website</a>
 		</div>
 		
 		
-		<h1 id="top">COURSEWORK</h1>
+		<h1 class="top">COURSEWORK</h1>
+		
+		<a href="https://scratch.mit.edu/projects/171205129/">SCRATCH PROJECT</a>
 		
 		
 		<div id = "links">
 		    <a href="index.html">HOME</a>
 		    <br>
 			<a href="page2.html">APPAREL</a>
-			<br>
-			<a href="page3.html"></a>
 		</div>
+		
+		<script>
+			//loop through all a tags add add this function
+    		var aTags = document.getElementsByTagName("a");
+    		for (var i=0; i<aTags.length; i++){
+    			aTags[i].onclick = function(){
+    				document.getElementById("body").style.animation = "fadeout 0.2s";
+    			}
+    		}
+		</script>
 	</body>
 </html>

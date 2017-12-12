@@ -1,17 +1,18 @@
 <html>
 	<head>
-		<title>Sup Mah Namericans</title>
+		<title>CDG X ACRONYM</title>
 		<link rel="stylesheet" href="styles/style.css">
+		<link rel="shortcut icon" href="favicon.ico">
 	</head>
 	
 	
-	<body>
+	<body id="body">
 		<div id = "nav">
 			<p style = "font-size: 1.5em">Krischin Layon</p>
 			<a href="https://www.christianlayone.com/" class = "nav">Actual Website</a>
 		</div>
 		
-		<h1 id="top">PAGE 3</h1>
+		<h1 class="top">PAGE 3</h1>
 		<img src = "img/cdg.png" style="width: 17em; line-height: 20px">
 		
 		
@@ -22,5 +23,15 @@
 			</br>
 			<a href="coursework.html">Coursework</a>
 		</div>
+		
+		<script>
+			//loop through all a tags add add this function
+    		var aTags = document.getElementsByTagName("a");
+    		for (var i=0; i<aTags.length; i++){
+    			aTags[i].onclick = function(){
+    				document.getElementById("body").style.animation = "fadeout 0.2s";
+    			}
+    		}
+		</script>
 	</body>
 </html>

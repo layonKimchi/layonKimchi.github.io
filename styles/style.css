@@ -4,11 +4,35 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 1em;
+    
+    /*css3 fade animations. the first lines are for compatibility with other browsers */
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+            animation: fadein 2s;
 }
 
-#top{
+
+/*these are the same thing, just for different browsers*/
+@keyframes fadein {from {opacity: 0;}to {opacity:1;}}
+@keyframes fadeout{from {opacity:1;} to {opacity:0;}}
+/* Firefox < 16 */
+@-moz-keyframes fadein {from {opacity: 0;} to {opacity:1;}}
+@-moz-keyframes fadeout{from {opacity: 1;} to {opacity:0;}}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {from {opacity: 0;} to {opacity:1;} }
+@-webkit-keyframes fadeout{from {opacity: 1;} to {opacity:0;} }
+
+
+/*heres the rest of my styling*/
+.top{
     font-size:5em;
     margin-top:1em;
+}
+
+#homeTitle{
+    text-align:right;
+    transform: rotate(270deg) translateX(2em);
+    transform-origin: 100% 100%;
 }
 
 #links { /*ID for the actual webpage links (NOT NAV)*/
@@ -29,19 +53,29 @@ body {
 }
 
 #apparelPic{
-    width: 20%;
+    width: 70%;
 }
 
-#buyMenu{
+#buyBox{
     text-align:center;
-    width: 20%;
     display: inline-block;
     line-height:1px;
 }
 
+#checkoutButton{
+    display:none;
+}
+
+
+.showcase{
+    display:inline-block;
+    width: 33%;
+}
+
+
+
 .buyButton{
     background-color:white;
-    
     border: none;
     font-size: 1em;
     font-weight: bold;

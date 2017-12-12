@@ -1,71 +1,110 @@
 <html>
 	<head>
-		<title>Sup Mah Namericans</title>
+		<title>CDG X ACRONYM</title>
 		<link rel="stylesheet" href="styles/style.css">
+		<link rel="shortcut icon" href="favicon.ico">
 	</head>
 	
 	
-	<body>
+	<body id="body">
 		
 		<div id = "nav">
 			<p style = "font-size: 1.5em">Krischin Layon</p>
 			<a href="https://www.christianlayone.com/" class = "nav">Actual Website</a>
 		</div>
 		
-		<h1 id="top">APPAREL</h1>
+		<h1 class="top">APPAREL</h1>
 		
-		<img src="img/piece1.jpg" id = "apparelPic">
-		<img src="img/piece2.jpg" id = "apparelPic">
-		<img src="img/piece3.jpg" id = "apparelPic">
+		<div class = "showcase">
+			<img src="img/piece1.jpg" id = "apparelPic">
+			<br>
+			<div id="buyBox">
+				<div class="prevText">
+					<p>"WINDBREAKER"</p>
+					<p>$20,000</p>
+					<p>In Stock</p>
+				</div>
+				<br>
+				<button class = "buyButton">ADD TO CART</button>
+			</div>
+		</div>
+		
+		<div class = "showcase">
+			<img src="img/piece2.jpg" id = "apparelPic">
+			<br>
+			<div id="buyBox">
+				<div class="prevText">
+					<p>"SHAWL"</p>
+					<p>$20,000</p>
+					<p>In Stock</p>
+				</div>
+				<br>
+				<button class = "buyButton">ADD TO CART</button>
+			</div>
+		</div>
+		
+		<div class = "showcase">
+			<img src="img/piece3.jpg" id = "apparelPic">
+			<br>
+			<div id="buyBox">
+				<div class="prevText">
+					<p>"COAT"</p>
+					<p>$20,000</p>
+					<p>In Stock</p>
+				</div>
+				<br>
+				<button class = "buyButton">ADD TO CART</button>
+			</div>
+		</div>
 		
 		<br>
 		
-		<div id="buyMenu">
-			<div class="prevText">
-				<p>"WINDBREAKER"</p>
-				<p>$20,000</p>
-				<p>In Stock</p>
-			</div>
-			<br>
-			<button class = "buyButton">PURCHASE</button>
-		</div>
+		<div style="padding:2%"></div>
 		
-		<div id="buyMenu">
-			<div class="prevText">
-				<p>"SHAWL"</p>
-				<p>$20,000</p>
-				<p>In Stock</p>
-			</div>
-			<br>
-			<button class = "buyButton">PURCHASE</button>
-		</div>
+		<p id="itemCount">ITEMS IN CART: 0</p>
+		<p id="totalCost">TOTAL COST: $0</p>
+		<button id="checkoutButton">PROCEED TO CHECKOUT</button>
 		
-		<div id="buyMenu">
-			<div class="prevText">
-				<p>"COAT"</p>
-				<p>$20,000</p>
-				<p>In Stock</p>
-			</div>
-			<br>
-			<button class = "buyButton">PURCHASE</button>
-		</div>
-		
+		<div style="padding:2%"></div>
 		
 		<div id = "links">
 			<a href="index.html">Home</a>
 			</br>
-			<a href="page3.html"></a>
-			<br>
 			<a href="coursework.html">Coursework</a>
 		</div>
 		
 		<script>
+			var itemsInCart = 0;
+			var expense = 0;
+			
+			//update page with new items
+			function updateInventory(){
+				document.getElementById("itemCount").innerHTML = "ITEMS IN CART: " + String(itemsInCart);
+				document.getElementById("totalCost").innerHTML = "TOTAL COST: $" + String(expense);
+				
+				if (itemsInCart > 0){
+					document.getElementById("checkoutButton").style.display = "inline";
+				}
+			}
+			
+			//loop through all buyButtons this onclick function
 			var buttons = document.getElementsByClassName("buyButton");
 			for(var i=0; i<buttons.length; i++) {
         		buttons[i].onclick = function(){
         			this.innerHTML = "IN CART"
         			this.style.color = "red";
+        			itemsInCart++;
+        			expense += 20000;
+        			updateInventory();
         		}
+    		}
+    		
+    		//loop through all a tags add add this function
+    		var aTags = document.getElementsByTagName("a");
+    		for (var i=0; i<aTags.length; i++){
+    			aTags[i].onclick = function(){
+    				document.getElementById("body").style.animation = "fadeout 0.2s";
+    			}
     		}
 		</script>
 	</body>
