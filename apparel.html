@@ -1,18 +1,21 @@
 <html>
 	<head>
-		<title>CDG X ACRONYM</title>
+		<title>APPAREL</title>
 		<link rel="stylesheet" href="styles/style.css">
 		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="description" content="OFFICIAL SITE FOR CDG X ACRONYM">
+		<meta name="keywords" content="Comme Des Garcons, CDG, Acronym, CDG X Acronym, Comme Des Garcons X Acronym">
 	</head>
 	
 	
 	<body id="body">
-		
+		<!--Floating Links-->
 		<div id = "nav">
 			<p style = "font-size: 1.5em">Krischin Layon</p>
 			<a href="https://www.christianlayone.com/" class = "nav">Actual Website</a>
 		</div>
 		
+		<!--Title-->
 		<h1 class="top">APPAREL</h1>
 		
 		<div class = "showcase">
@@ -67,6 +70,7 @@
 		
 		<div style="padding:2%"></div>
 		
+		<!-- Site Navigation -->
 		<div id = "links">
 			<a href="index.html">Home</a>
 			</br>
@@ -85,6 +89,12 @@
 				if (itemsInCart > 0){
 					document.getElementById("checkoutButton").style.display = "inline";
 				}
+			}
+			
+			//assign this function to the checkout button
+			document.getElementById("checkoutButton").onclick = function(){
+				document.getElementById("body").style.animation = "fadeout 0.2s";
+				window.location.assign("checkout.html");
 			}
 			
 			//loop through all buyButtons this onclick function
