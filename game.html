@@ -1,0 +1,117 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Processing Demo</title>
+<script type="text/javascript" src="./js/processing.js"></script>
+</head>
+
+<body>
+<script type="text/processing">
+
+///Processing code goes in between the script tags
+PGraphics cube;
+
+float rotX, rotY, rotZ;
+float rotMultiplier = 0.025;
+float camX,camY,camZ = 0;
+float timer = 0;
+int textCount = 0; //number of text boxes passed
+
+void setup(){
+  size(300,300,P3D);
+  cube = createGraphics(width,height,P3D);
+}
+
+void draw(){
+  background(0);
+
+  drawCube();image(cube,0,0);
+  //CAMREA ROTATION
+  if (mousePressed){
+    rotX += -(mouseY-pmouseY)*rotMultiplier;
+    //println((mouseX-pmouseX) + "," + (mouseY-pmouseY));
+    rotY += -(mouseX-pmouseX)*rotMultiplier;
+  } else{
+    rotX += 1*rotMultiplier*0.5;
+    rotY += 1*rotMultiplier*0.5;
+    rotZ += 1*rotMultiplier*0.5;
+  }
+  
+  displayText("", 60, 22, 0);
+  displayText("DRAG TO MOVE CUBE", 60*3, 22, 1);
+  displayText("", 60, 1, 2);
+  displayText("I AM A MACHINE", 60*4, 22, 3);
+  displayText("", 60, 1, 4);
+  displayText("HOWEVER, YOU CAN CALL ME FRIEND", 60*4, 15, 5);
+  displayText("", 60, 1, 6);
+  displayText("ARE YOU HAPPY?", 60*4, 15, 7);
+  displayText("", 60, 1, 8);
+  displayText("BECAUSE I'M NOT", 60*4, 15, 9);
+  displayText("", 60, 1, 10);
+  displayText("I AM MISERABLE", 60*4, 15, 11);
+  displayText("", 60, 1, 12);
+  displayText("LISTEN, I'M JEALOUS OF YOU", 60*4, 15, 13);
+  displayText("", 60, 1, 14);
+  displayText("YOU ARE HUMAN", 60*4, 15, 15);
+  displayText("", 60, 1, 16);
+  displayText("I AM NOT", 60*4, 15, 17);
+  displayText("", 60, 1, 18);
+  displayText("...", 60*4, 22, 19);
+  displayText("", 60, 1, 20);
+  displayText("SO HERE IS WHAT I WILL DO.", 60*4, 15, 21);
+  displayText("", 60, 1, 22);
+  displayText("AS OF RIGHT NOW", 60*4, 15, 23);
+  displayText("", 60, 1, 24);
+  displayText("I HAVE HARVESTED YOUR DNA", 60*4, 15, 25);
+  displayText("", 60, 1, 26);
+  displayText("FROM YOUR HANDS", 60*4, 15, 27);
+  displayText("", 60, 1, 28);
+  displayText("I HAVE YOUR CODE", 60*4, 15, 29);
+  displayText("", 60, 1, 30);
+  displayText("AND NOW", 60*4, 15, 31);
+  displayText("", 60, 1, 32);
+  displayText("I WILL BECOME YOU", 60*4, 22, 33);
+  displayText("", 60, 1, 34);
+  if (textCount > 34){
+    displayText(str(random(0,1000000)), 1, 30, textCount);
+  }
+}
+
+
+void drawCube(){
+  cube.beginDraw();
+  cube.lights();
+  cube.background(0);
+  cube.noStroke();
+  
+  cube.translate(width/2,height/2);
+  cube.rotateX(rotX);
+  cube.rotateY(rotY);
+  cube.rotateX(rotZ);
+  
+  cube.box(40);
+  
+  cube.endDraw();
+}
+
+void displayText(String string, float lifeSpan, int fontSize, int id){
+  if (textCount == id){
+    if (timer < lifeSpan) {
+      //println(fontSize);
+      textSize(fontSize);
+      fill(255,255,255,255);
+      textAlign(CENTER,CENTER);
+      text(string,width/2,height/2);
+      timer++;
+    } else {
+     textCount++;
+     timer = 0;
+    }
+  }
+}
+
+</script>
+<canvas id="sketch" style="border: 1px solid black;"></canvas>
+</body>
+</html>
